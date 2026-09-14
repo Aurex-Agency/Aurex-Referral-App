@@ -1,8 +1,8 @@
-node_modules/
-.next/
-out/
 .env*
 !.env.example
+node_modules
+.next
+.git
 *.tsbuildinfo
 .DS_Store
-.vercel
+out

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { PortraitGuard } from '@/components/portrait-guard';
 
 export const metadata: Metadata = {
   title: 'Magnolia | Mobile Detailing',
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   icons: { icon: '/icon.svg', apple: '/icon-180.png' },
   appleWebApp: { capable: true, title: 'Magnolia', statusBarStyle: 'default' },
 };
-export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#172b36' };
+export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover', themeColor: '#172b36' };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body>{children}<PortraitGuard /></body></html>;
 }
